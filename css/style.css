@@ -34,9 +34,9 @@ html {
     top: 50%;
     background-color: #eb5939;
     z-index: 10000;
-    height: 30px;
-    width: 30px;
-    transition: all 300ms ease-out;
+    height: 20px;
+    width: 20px;
+    transition: all 300ms linear;
 }
 
 .navbar-top>ul>li {
@@ -66,6 +66,11 @@ a {
 }
 
 
+.specific-about-line-words{
+    display: flex;
+    flex-direction: column;
+}
+
 .about-line-words {
     line-height: 110%;
     letter-spacing: -.01em;
@@ -75,19 +80,19 @@ a {
     -webkit-background-clip: text;
     background-clip: text;
     background-size: 0%;
-    transition: background-size cubic-bezier(.1, .5, .5, 1) .8s;
+    transition: background-size cubic-bezier(.1, .5, .5, 1) .6s;
     margin: 0;
     width: auto;
     text-align: center;
 }
 
-.red-about-text {
+.red-text {
     color: #eb593930;
     background: linear-gradient(to right, #eb5939, #eb5939) no-repeat;
     -webkit-background-clip: text;
     background-clip: text;
     background-size: 0%;
-    transition: background-size cubic-bezier(.1, .5, .5, 1) .5s;
+    transition: background-size cubic-bezier(.1, .5, .5, 1) .8s;
 }
 
 .about-section {
@@ -110,21 +115,25 @@ a {
     -webkit-background-clip: text;
     background-clip: text;
     background-size: 0%;
-    transition: background-size cubic-bezier(.1,.5,.5,1) 0.5s;
+    transition: background-size cubic-bezier(.1, .5, .5, 1) 0.5s;
     border-bottom: 1px solid #2F2B28;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     transition: color .1s;
-  }
+}
 
-  .skills-section {
-    padding: 0 0 0 3em;
-  }
+.skills-section {
+    padding: 0 2em 0 2em;
+}
 
-  
-  .skillsText > span {
+.skillsText:nth-child(6) {
+    border-bottom: 0px
+}
+
+
+.skillsText>span {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -135,23 +144,30 @@ a {
     color: #0D0D0D;
     clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0 50%);
     transform-origin: center;
-    transition: all cubic-bezier(.1,.5,.5,1) 0.4s;
+    transition: all cubic-bezier(.1, .5, .5, 1) 0.4s;
     display: flex;
     flex-direction: column;
     align-items: end;
     padding-right: 3em;
     z-index: -1;
-  }
-  
-  .skillsText:hover > span {
+}
+
+.skillsText:hover>span {
     clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%);
-  
-  }
-  
-  .skillsText:hover {
+
+}
+
+.skillsText:hover {
     color: #0D0D0D;
-  }
-  
+}
+
+.experience-section {
+    min-height: 70vh;
+    background-image: url('https://github.githubassets.com/images/modules/site/home-campaign/footer-galaxy.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
 
 
@@ -174,66 +190,87 @@ a {
     }
 
     .about-line-words {
-        font-size: 6rem;
+        font-size: 5.5rem;
         text-align: center;
     }
 
-    .skillsText{
+    .skillsText {
         font-size: 7rem;
     }
 
-    .skillsText > span{
+    .skillsText>span {
         font-size: 1.5rem;
     }
 }
 
 @media screen and (width > 1280px) and (width < 1400px) {
-    .skillsText{
+    .skillsText {
         font-size: 6rem;
     }
 
-    .skillsText > span{
+    .skillsText>span {
         font-size: 1.2rem;
     }
 }
 
-@media screen and (width > 1000px) and (width < 1280px) {
-    .skillsText{
-        font-size: 5rem;
+@media screen and (width > 1024px) {
+    #about-section-hover-effect {
+        padding: 0 3em 0 3em !important;
+        font-size: 2rem;
     }
-
-    .skillsText > span{
-        font-size: 1rem;
+    .specific-about-line-words{
+        display: inline;
     }
 }
 
+@media screen and (width > 1000px) {
+    .specific-about-line-words{
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+
+@media screen and (width > 1000px) and (width < 1281px) {
+    .skillsText {
+        font-size: 5rem;
+    }
+
+    .skillsText>span {
+        font-size: 1rem;
+    }
+
+}
+
 @media screen and (width < 880px) {
-    .skillsText{
+    .skillsText {
         pointer-events: none;
     }
-    .skillsText > span{
+
+    .skillsText>span {
         display: none;
     }
 }
 
 @media screen and (width < 710px) {
-    .skills-section{
+    .skills-section {
         padding: 0;
     }
-    .skillsText{
+
+    .skillsText {
         font-size: 4.5rem;
 
     }
 }
 
 @media screen and (width > 700px) and (width < 1000px) {
-    .skills-section{
+    .skills-section {
         padding: 0 0 0 0em;
     }
-    .skillsText{
+
+    .skillsText {
         font-size: 5rem;
     }
-
 }
 
 @media screen and (width > 600px) and (width < 1400px) {
@@ -242,10 +279,6 @@ a {
         line-height: 85%;
         font-weight: 700;
         letter-spacing: -8px;
-    }
-
-    .hero-main-text-section {
-        height: 100vh;
     }
 
     .about-line-words {
@@ -260,10 +293,6 @@ a {
         line-height: 85%;
         font-weight: 700;
         letter-spacing: -8px;
-    }
-
-    .hero-main-text-section {
-        height: 100vh;
     }
 
 }
@@ -298,10 +327,10 @@ a {
     }
 
     .about-line-words {
-        font-size: 2rem;
+        font-size: 2.4rem;
     }
 
-    .skillsText{
+    .skillsText {
         font-size: 3rem;
     }
 }

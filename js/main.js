@@ -1,38 +1,10 @@
+
 window.onload = () => {
-    gsap.registerPlugin(ScrollTrigger);
-    const aboutTextElements = gsap.utils.toArray('.about-line-words');
-    aboutTextElements.forEach(text => {
-        gsap.to(text, {
-            backgroundSize: '100%',
-            ease: 'none',
-            scrollTrigger: {
-                trigger: text,
-                start: 'center 80%',
-                end: 'center 40%',
-                scrub: true,
-            },
-        });
-    });
-
-    const skillsTextElements = gsap.utils.toArray('.skillsText');
-    skillsTextElements.forEach(text => {
-        gsap.to(text, {
-            backgroundSize: '100%',
-            ease: 'none',
-            scrollTrigger: {
-                trigger: text,
-                start: 'center 80%',
-                end: 'center 40%',
-                scrub: true,
-            },
-        });
-    });
-
     const cursor = document.getElementById('cursor');
-    // document.body.addEventListener("mousemove", function (e) {
-    //     cursor.style.left = e.clientX + "px";
-    //     cursor.style.top = e.clientY + "px";
-    // });
+    document.body.addEventListener("mousemove", function (e) {
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+    });
 
     const icons = document.getElementsByClassName('icons');
     for (let i = 0; i < icons.length; i++) {
@@ -108,16 +80,14 @@ window.onload = () => {
 
     })
     firstText.addEventListener("mouseleave", (e) => {
-        cursor.style.height = "35px"
-        cursor.style.width = "35px"
+        cursor.style.height = "20px"
+        cursor.style.width = "20px"
         cursor.style.mixBlendMode = "normal"
     })
 
 
-
-
     const aboutHoverBox = document.getElementById('about-section-hover-effect')
-    aboutHoverBox.addEventListener('mouseenter', () => {
+    aboutHoverBox.addEventListener('mouseenter', (e) => {
         cursor.style.height = "300px"
         cursor.style.width = "300px"
         cursor.style.backgroundColor = 'transparent'
@@ -125,16 +95,35 @@ window.onload = () => {
         aboutHoverBox.style.filter = "grayscale(2)"
     })
     aboutHoverBox.addEventListener('mouseleave', () => {
-        cursor.style.height = "35px"
-        cursor.style.width = "35px"
+        cursor.style.height = "20px"
+        cursor.style.width = "20px"
         cursor.style.backgroundColor = '#eb5939'
         aboutHoverBox.style.filter = "grayscale(0)"
         cursor.style.outline = '0px'
     })
 
+    const aboutTextElements = document.querySelectorAll('.about-line-words');
+    aboutTextElements.forEach((text, index) => {
+        window.addEventListener('scroll', () => {
+            const scrollPosition = text.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+    
+            // Adjust the scroll speed based on the element's index
+            const scrollSpeed = index === 0 ? 2.1 : index === 1 ? 1.85 : index === 2 ? 1.65 : 1.25;
+    
+            // Calculate the adjusted scroll percentage
+            const adjustedScrollPercentage = ((windowHeight - scrollPosition) / windowHeight) * 100 * scrollSpeed;
+    
+            // Update background size based on adjusted scroll percentage
+            text.style.backgroundSize = `${adjustedScrollPercentage}% 100%`;
+        });
+    });
+    
+    
+
 
     const about = document.getElementsByClassName('about-hover-effect')
-    console.log(about)
+
     about[0].addEventListener('mouseenter', () => {
         about[0].innerText = `I'm an insane and irrational`
     })
@@ -149,12 +138,6 @@ window.onload = () => {
         about[3].innerText = `stunning digital dreams.`
     })
 
-    // about[3].addEventListener('mouseenter', () => {
-    //     about[3].innerText = `not-so-stunning digital dreams` 
-    // })
-    // about[3].addEventListener('mouseleave', () => {
-    //     about[3].innerText = `stunning digital dreams` 
-    // })
 
 
     // const aboutText = "I'm a skilled full-stack developer, focused strongly on turning code into stunning digital dreams, and who's passion for development knows no bounds."
@@ -211,3 +194,34 @@ window.onload = () => {
 }
 
 
+document.addEventListener("DOMContentLoaded", () => {
+        // gsap.registerPlugin(ScrollTrigger);
+        // const aboutTextElements = gsap.utils.toArray('.about-line-words');
+        // console.log(aboutTextElements)
+        // aboutTextElements.forEach(text => {
+        //     gsap.to(text, {
+        //         backgroundSize: '100%',
+        //         ease: 'none',
+        //         scrollTrigger: {
+        //             trigger: text,
+        //             start: 'center 80%',
+        //             end: 'center 20%',
+        //             scrub: true,
+        //         },
+        //     });
+        // });
+    
+    //     const skillsTextElements = gsap.utils.toArray('.skillsText');
+    //     skillsTextElements.forEach(text => {
+    //         gsap.to(text, {
+    //             backgroundSize: '100%',
+    //             ease: 'none',
+    //             scrollTrigger: {
+    //                 trigger: text,
+    //                 start: 'center 80%',
+    //                 end: 'center 20%',
+    //                 scrub: true,
+    //             },
+    //         });
+    //     });
+})
