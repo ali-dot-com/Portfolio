@@ -21,21 +21,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"
         integrity="sha512-8Z5++K1rB3U+USaLKG6oO8uWWBhdYsM3hmdirnOEWp8h2B1aOikj5zBzlXs8QOrvY9OxEnD2QDkbSKKpfqcIWw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"></script>
 </head>
 
 
-<body style="overflow-x: hidden; background-color: rgb(12,12,12);">
+<body style="overflow-x: hidden; background-color: rgb(20,20,20);">
 
     <div class="cursor" id="cursor"></div>
 
     <section>
 
-        <!-- <div class="hero-bg-video"
+        <div class="hero-bg-video"
             style="width: 100vw; position: fixed; left: 0; top: 0; z-index: -2; filter: brightness(.4);">
             <video src="./images/0803(1080).mp4" loop preload="auto" muted autoplay></video>
-        </div> -->
+        </div>
 
         <section class="nav">
             <div class="container-fluid">
@@ -98,39 +99,57 @@
         </section>
     </section>
 
-
-
-
     <section class="about-section">
         <div class="container-fluid">
             <div class="col-md-12">
-                
-                <div class="about-line-section d-flex justify-content-center align-items-center py-5 flex-column">
-                    <p style="color: #8d887f; font-weight: bold;" class="py-3 fs-5 text-fluid">What I think about myself?</p>
-                    
-                    <!-- <div class="text-center" id="about-section-hover-effect">
-                        <span class="about-line-words about-hover-effect">
-                            I'm a creative and dynamic <b class="red-about-text about-line-words">full-stack developer</b> focused strongly on turning code into stunning digital dreams.
-                        </span>
-                    </div> -->
-                    <div id="about-section-hover-effect" class="d-flex flex-column align-items-center">
-                        <span class="w-auto d-inline about-line-words about-hover-effect">I'm a creative and
-                            dynamic</span>
-                        <div class="specific-about-line-words">
-                            <span class="about-line-words red-text">full-stack developer&nbsp;</span><b class="about-line-words about-hover-effect">focused</b>
-                        </div>
-                        <span class="about-line-words about-hover-effect">strongly on turning code into</span>
-                        <span class="about-line-words about-hover-effect">stunning digital dreams.</span>
-                        <hr style="margin: 0; height: 2px;">
-                    </div>
 
+                <div class="d-flex flex-column align-items-center py-5">
+                    <p style="color: #8d887f; font-weight: 700;" class="py-3 fs-5 text-fluid">What I know about myself
+                    </p>
+                    <div id="about-section-hover-effect" class="d-flex flex-column px-5 pb-5">
+                        <span class="about-line-words about-hover-effect">I'm a creative and dynamic</span>
+                        <span class="about-line-words about-hover-effect">full-stack website developer</span>
+                        <span class="about-line-words about-hover-effect">focusing on turning code into</span>
+                        <span class="about-line-words about-hover-effect">stunning digital dreams.</span>
+                        <span class="about-line-words about-hover-effect fs-5 pt-4 red-text">I'm not the best. But I
+                            try</span>
+                    </div>
 
                 </div>
             </div>
         </div>
     </section>
 
-    <section style="background-color: rgb(12,12,12);" class="p">
+
+    <!-- <section class="about-section">
+        <div class="container-fluid">
+            <div class="col-md-12">
+                
+                <div class="about-line-section d-flex justify-content-center align-items-center py-5 flex-column">
+                    <p style="color: #8d887f; font-weight: bold;" class="py-3 fs-5 text-fluid">What I think about myself?</p>
+                    
+                    <div class="mobile-about-section px-5 text-justify" style="border: 1px solid red;">
+                        <span class="mobile-about-lines">
+                            I'm a creative and dynamic <b class="red-text mobile-about-lines">full-stack developer</b> focused strongly on turning code into stunning and captivating digital dreams.
+                        </span>
+                    </div>
+                    
+                    <div id="about-section-hover-effect" class="px-4">
+                        <span class="about-line-words about-hover-effect">I'm a creative & dynamic</span>
+                        <div class="specific-about-line-words">
+                            <span class="about-line-words red-text">full-stack developer</span>
+                        </div>
+                        <span class="about-line-words about-hover-effect">focusing on turning code </span>
+                        <span class="about-line-words about-hover-effect">into stunning digital dreams.</span>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section style="background-color: rgb(20,20,20);">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 d-flex justify-content-center align-items-center">
@@ -143,12 +162,18 @@
                     <section class="skills-section">
                         <div class="container-fluid">
                             <div class="row text-fluid skills-text-div">
-                                <h1 class="skillsText">C++<span>2 Years of Where friends can access your private parts</span></h1>
-                                <h1 class="skillsText">PYTHON<span>1 Year of visualizing print('Hello World')</span></h1>
-                                <h1 class="skillsText">JAVASCRIPT<span>by the time you read this, 3 new frameworks would've been released</span></h1>
-                                <h1 class="skillsText">GIT & GITHUB<span>1 year of comitting "final final final bug fix"</span></h1>
-                                <h1 class="skillsText">SQL & MYSQL<span>2 years of joining parties rather than tables</span></h1>
-                                <h1 class="skillsText pb-5">MERN STACK<span>2 years of fighting between callbacks, promises and async/await</span></h1>
+                                <h1 class="skillsText">C++<span>2 Years of Where friends can access your private
+                                        parts</span></h1>
+                                <h1 class="skillsText">PYTHON<span>1 Year of visualizing print('Hello World')</span>
+                                </h1>
+                                <h1 class="skillsText">JAVASCRIPT<span>by the time you read this, 3 new frameworks
+                                        would've been released</span></h1>
+                                <h1 class="skillsText">GIT & GITHUB<span>1 year of comitting "final final final bug
+                                        fix"</span></h1>
+                                <h1 class="skillsText">SQL & MYSQL<span>2 years of joining parties rather than
+                                        tables</span></h1>
+                                <h1 class="skillsText pb-5">MERN STACK<span>2 years of fighting between callbacks,
+                                        promises and async/await</span></h1>
                             </div>
                         </div>
                     </section>
@@ -161,29 +186,66 @@
 
     <section class="experience-section">
         <div class="container-fluid">
-            <div class="col-md-12">
-                <div class="experience-line-section d-flex justify-content-center align-items-center py-5 flex-column">
-                    <p style="color: #8d887f; font-weight: bold;" class="py-3 fs-5 text-fluid">Let's talk experience</p>
+            <div class="col-md-12 d-flex align-items-center justify-content-center">
 
-                    <div id="experience-section-hover-effect" class="d-flex flex-column align-items-center">
-                        <span class="w-auto d-inline about-line-words experience-hover-effect">I'm a creative and
-                            dynamic</span>
-                        <div class="d-flex flex-row justify-content-center align-items-center">
-                            <span class="about-line-words red-text">full-stack developer&nbsp;</span>
-                        </div>
-                        <span class="about-line-words experience-hover-effect">strongly on turning code into</span>
-                        <span class="about-line-words experience-hover-effect">stunning digital dreams.</span>
-                        <hr style="margin: 0; height: 2px;">
+                <div id="experience-line-section" class="d-flex flex-column align-items-center py-5">
+                    <p style="color: #8d887f; font-weight: 700;" class="py-3 fs-5 text-fluid">Let's talk experience</p>
+                    <div id="temp-hover-effect" class="d-flex flex-column px-5 pb-5">
+                        <span class="about-line-words experience-hover-effect">Over a solid two-years of</span>
+                        <span class="about-line-words experience-hover-effect">experience in dynamic websites</span>
+                        <span class="about-line-words experience-hover-effect">and working with one of the most</span>
+                        <span class="about-line-words experience-hover-effect">talented people in the business.</span>
+                        <span class="about-line-words experience-hover-effect fs-5 pt-4 red-text">That's a lot of
+                            experience!</span>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 
 
+    <section style="background-color: rgb(20,20,20);">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center align-items-center">
+                    <p style="color: #8d887f; font-weight: bold;" class="pt-5 pb-3 fs-5 text-fluid">PROJECTS</p>
+                </div>
+            </div>
 
-    <section style="height: 50vh;">
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="skills-section">
+                        <div class="container-fluid">
+                            <div class="row text-fluid skills-text-div">
+                                <a href="https://www.google.com" class="text-decoration-none">
+                                    <h1 class="skillsText">ARCADE<span>My first ever web project</span></h1>
+                                </a>
+                                <a href="https://www.google.com" class="text-decoration-none">
+                                    <h1 class="skillsText">GPU-AI-LAB<span>Just made 2 pages but still proud of this
+                                            one</span></h1>
+                                </a>
+                                <a href="https://www.google.com" class="text-decoration-none">
+                                    <h1 class="skillsText">TURNITINPRO.com<span>Don't wanna talk about this one</span>
+                                    </h1>
+
+                                </a>
+                                <a href="https://www.google.com" class="text-decoration-none">
+                                    <h1 class="skillsText pb-5" style="border: 0;">SCHOOL MANAGER<span>I dont even know
+                                            when i did this</span></h1>
+
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section style="height: 100vh;">
 
     </section>
 

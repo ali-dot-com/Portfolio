@@ -1,5 +1,6 @@
 
 window.onload = () => {
+
     const cursor = document.getElementById('cursor');
     document.body.addEventListener("mousemove", function (e) {
         cursor.style.left = e.clientX + "px";
@@ -30,8 +31,8 @@ window.onload = () => {
     const firstText = document.getElementById('big-hover-effect');
 
     firstText.addEventListener("mouseenter", (e) => {
-        cursor.style.height = "400px"
-        cursor.style.width = "400px"
+        cursor.style.height = "300px"
+        cursor.style.width = "300px"
         cursor.style.mixBlendMode = "difference"
 
         line[0].addEventListener("mouseover", (e) => {
@@ -80,8 +81,8 @@ window.onload = () => {
 
     })
     firstText.addEventListener("mouseleave", (e) => {
-        cursor.style.height = "20px"
-        cursor.style.width = "20px"
+        cursor.style.height = "30px"
+        cursor.style.width = "30px"
         cursor.style.mixBlendMode = "normal"
     })
 
@@ -92,52 +93,142 @@ window.onload = () => {
         cursor.style.width = "300px"
         cursor.style.backgroundColor = 'transparent'
         cursor.style.outline = '3px solid #eb5939'
-        aboutHoverBox.style.filter = "grayscale(2)"
     })
     aboutHoverBox.addEventListener('mouseleave', () => {
-        cursor.style.height = "20px"
-        cursor.style.width = "20px"
+        cursor.style.height = "30px"
+        cursor.style.width = "30px"
         cursor.style.backgroundColor = '#eb5939'
-        aboutHoverBox.style.filter = "grayscale(0)"
         cursor.style.outline = '0px'
     })
 
     const aboutTextElements = document.querySelectorAll('.about-line-words');
-    aboutTextElements.forEach((text, index) => {
-        window.addEventListener('scroll', () => {
-            const scrollPosition = text.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-    
-            // Adjust the scroll speed based on the element's index
-            const scrollSpeed = index === 0 ? 2.1 : index === 1 ? 1.85 : index === 2 ? 1.65 : 1.25;
-    
-            // Calculate the adjusted scroll percentage
-            const adjustedScrollPercentage = ((windowHeight - scrollPosition) / windowHeight) * 100 * scrollSpeed;
-    
-            // Update background size based on adjusted scroll percentage
-            text.style.backgroundSize = `${adjustedScrollPercentage}% 100%`;
-        });
-    });
-    
+    if (aboutTextElements){
+        aboutTextElements.forEach((text, index) => {
+            window.addEventListener('scroll', () => {
+                const scrollPosition = text.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                const scrollSpeed = index === 0 ? 2 : index === 1 ? 1.9 : index === 2 ? 1.7 : 1.6;    
+                const adjustedScrollPercentage = ((windowHeight - scrollPosition) / windowHeight) * 100 * scrollSpeed;
+        
+                text.style.backgroundSize = `${adjustedScrollPercentage}% 100%`;
+            });
+        });    
+    }
     
 
+    const mobileAboutTextElements = document.querySelectorAll('.mobile-about-lines');
+    if (mobileAboutTextElements){
+        mobileAboutTextElements.forEach((text, index) => {
+            window.addEventListener('scroll', () => {
+                const scrollPosition = text.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                // const scrollSpeed = index === 0 ? 0.65 : index === 1 ? 0.5 : index === 2 ? 0.4 : 0.4; 
+                const scrollSpeed = 0.9   
+                const adjustedScrollPercentage = ((windowHeight - scrollPosition) / windowHeight) * 100 * scrollSpeed;
+                text.style.backgroundSize = `${adjustedScrollPercentage}% 100%`;
+            });
+        });
+    }
+
+
+    const skillsTextElements = document.querySelectorAll('.skillsText');
+    if(skillsTextElements){
+        skillsTextElements.forEach((text, index) => {
+            window.addEventListener('scroll', () => {
+                const scrollPosition = text.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;    
+                // const scrollSpeed = index === 0 ? 2.1 : index === 1 ? 1.85 : index === 2 ? 1.65 : 1.25;
+                const scrollSpeed = index === 0 ? 1 : index === 1 ? 1.35 : index === 2 ? 1.85 : 2;
+                const adjustedScrollPercentage = ((windowHeight - scrollPosition) / windowHeight) * 100 * scrollSpeed;
+        
+                text.style.backgroundSize = `${adjustedScrollPercentage}% 100%`;
+            });
+        });
+    }
 
     const about = document.getElementsByClassName('about-hover-effect')
+    if (about){
+        about[0].addEventListener('mouseenter', () => {
+            about[0].innerText = `I'm an insane and irrational`
+        })
+        about[0].addEventListener('mouseleave', () => {
+            about[0].innerText = `I'm a creative and dynamic`
+        })
+        if (about[3]){
+            about[3].addEventListener('mouseenter', () => {
+                about[3].innerText = `stunning cash flow dreams.`
+            })
+            about[3].addEventListener('mouseleave', () => {
+                about[3].innerText = `stunning digital dreams.`
+            })
+        }
+        if (about[4]){
+            about[4].addEventListener('mouseenter', () => {
+                about[4].innerHTML = "More the money, more I'll try."
+            })
+            about[4].addEventListener('mouseleave', () => {
+                about[4].innerHTML = "I'm not the best. But I try"
+            })
+        }        
+    }
 
-    about[0].addEventListener('mouseenter', () => {
-        about[0].innerText = `I'm an insane and irrational`
+    const experienceCursor = document.getElementById('experience-line-section');
+    experienceCursor.addEventListener('mouseenter', (e) => {
+        cursor.style.height = "300px"
+        cursor.style.width = "300px"
+        // cursor.style.backgroundColor = 'transparent'
+        cursor.style.mixBlendMode = 'difference'
+        cursor.style.outline = '3px solid #eb5939'
     })
-    about[0].addEventListener('mouseleave', () => {
-        about[0].innerText = `I'm a creative and dynamic`
+    experienceCursor.addEventListener('mouseleave', () => {
+        cursor.style.height = "30px"
+        cursor.style.width = "30px"
+        cursor.style.backgroundColor = '#eb5939'
+        cursor.style.outline = '0px'
     })
 
-    about[3].addEventListener('mouseenter', () => {
-        about[3].innerText = `stunning cash flow dreams.`
+    const exp = document.getElementsByClassName('experience-hover-effect')
+    exp[0].addEventListener('mouseenter', () => {
+        exp[0].innerHTML = "Just over six-months of me"
+        exp[0].style.color = "#eb5939"
     })
-    about[3].addEventListener('mouseleave', () => {
-        about[3].innerText = `stunning digital dreams.`
+    exp[0].addEventListener('mouseleave', () => {
+        exp[0].innerHTML = "Over a solid two-years of"
+        exp[0].style.color = "#d1ccc5"
     })
+    exp[1].addEventListener('mouseenter', () => {
+        exp[1].innerHTML = "producing some cool websites"
+        exp[1].style.color = "#eb5939"
+    })
+    exp[1].addEventListener('mouseleave', () => {
+        exp[1].innerHTML = "experience in dynamic websites"
+        exp[1].style.color = "#d1ccc5"
+    })
+    exp[2].addEventListener('mouseenter', () => {
+        exp[2].innerHTML = "Other years were me struggling"
+        exp[2].style.color = "#eb5939"
+    })
+    exp[2].addEventListener('mouseleave', () => {
+        exp[2].innerHTML = "and working with one of the most"
+        exp[2].style.color = "#d1ccc5"
+    })
+    exp[3].addEventListener('mouseenter', () => {
+        exp[3].innerHTML = "with theory of computation."
+        exp[3].style.color = "#eb5939"
+    })
+    exp[3].addEventListener('mouseleave', () => {
+        exp[3].innerHTML = "talented people in the business"
+        exp[3].style.color = "#d1ccc5"
+    })
+    exp[4].addEventListener('mouseenter', () => {
+        exp[4].innerHTML = "That's definitely not a lot of experience."
+    })
+    exp[4].addEventListener('mouseleave', () => {
+        exp[4].innerHTML = "That's a lot of experience."
+    })
+    
 
+    
 
 
     // const aboutText = "I'm a skilled full-stack developer, focused strongly on turning code into stunning digital dreams, and who's passion for development knows no bounds."
@@ -194,7 +285,7 @@ window.onload = () => {
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
         // gsap.registerPlugin(ScrollTrigger);
         // const aboutTextElements = gsap.utils.toArray('.about-line-words');
         // console.log(aboutTextElements)
@@ -224,4 +315,4 @@ document.addEventListener("DOMContentLoaded", () => {
     //             },
     //         });
     //     });
-})
+// })
