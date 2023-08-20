@@ -107,7 +107,7 @@ window.onload = () => {
             window.addEventListener('scroll', () => {
                 const scrollPosition = text.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
-                const scrollSpeed = index === 0 ? 2 : index === 1 ? 1.9 : index === 2 ? 1.7 : 1.6;    
+                const scrollSpeed = index === 0 ? 2 : index === 1 ? 1.9 : index === 2 ? 2 : 2;    
                 const adjustedScrollPercentage = ((windowHeight - scrollPosition) / windowHeight) * 100 * scrollSpeed;
         
                 text.style.backgroundSize = `${adjustedScrollPercentage}% 100%`;
@@ -213,7 +213,7 @@ window.onload = () => {
         exp[2].style.color = "#d1ccc5"
     })
     exp[3].addEventListener('mouseenter', () => {
-        exp[3].innerHTML = "with theory of computation."
+        exp[3].innerHTML = "in League of Legends."
         exp[3].style.color = "#eb5939"
     })
     exp[3].addEventListener('mouseleave', () => {

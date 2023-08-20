@@ -1,12 +1,12 @@
 html {
     scroll-behavior: smooth;
-    transition: scroll-behavior 1s ease-out; /* Adjust the duration as needed */
+    transition: scroll-behavior 1s ease-out;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Neuton:wght@800&display=swap');
 
 * {
     margin: 0;
@@ -191,7 +191,8 @@ a {
 }
 
 .experience-section > div{
-    backdrop-filter: grayscale(1);
+    /* backdrop-filter: grayscale(1); */
+    backdrop-filter: brightness(0.8);
     width: 100%;
 
 }
@@ -202,6 +203,28 @@ a {
     text-align: justify;
     line-height: 110%;
     font-weight: 800;
+}
+
+.contact-div > div{
+    padding-top: 11em;
+    width: 100%;
+}
+
+.contact-row{
+    margin-left: auto;
+    color: #eeeeee;
+    letter-spacing: -7px;
+    font-weight: 900;
+    line-height: .8;
+    font-size: 8.5rem;
+}
+.contact-row:nth-child(1){
+    display: flex;
+    justify-content: center;
+}
+.contact-row:nth-child(3){
+    display: flex;
+    justify-content: center;
 }
 
 /* MEDIA QUERIES */
@@ -285,6 +308,21 @@ a {
 
     .skillsText>span {
         display: none;
+    }
+
+    .contact-div > div{
+        padding-top: 5em;
+        width: 100%;
+    }
+    
+    .contact-row{
+        font-weight: 700;
+        font-size: 5rem;
+    }
+    .contact-row:nth-child(2){
+        display: flex;
+        justify-content: center;
+        padding-left: 0em !important;
     }
 }
 
