@@ -1,4 +1,3 @@
-
 window.onload = () => {
 
     const cursor = document.getElementById('cursor');
@@ -18,14 +17,6 @@ window.onload = () => {
             cursor.style.mixBlendMode = "normal"
         })
     }
-
-    // function getScrollFraction() {
-    //     var h = document.documentElement,
-    //         b = document.body,
-    //         st = 'scrollTop',
-    //         sh = 'scrollHeight';
-    //     return (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight);
-    // }
 
     const line = document.getElementsByClassName('hero-lines')
     const firstText = document.getElementById('big-hover-effect');
@@ -316,3 +307,4 @@ window.onload = () => {
     //         });
     //     });
 // })
+
